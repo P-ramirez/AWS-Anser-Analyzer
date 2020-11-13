@@ -1,0 +1,15 @@
+{
+  "providers": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-answeranalyzer-dev-134850-authRole",
+      "UnauthRoleArn": "arn:aws:iam::983964660705:role/amplify-answeranalyzer-dev-134850-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::983964660705:role/amplify-answeranalyzer-dev-134850-authRole",
+      "Region": "us-east-2",
+      "DeploymentBucketName": "amplify-answeranalyzer-dev-134850-deployment",
+      "UnauthRoleName": "amplify-answeranalyzer-dev-134850-unauthRole",
+      "StackName": "amplify-answeranalyzer-dev-134850",
+      "StackId": "arn:aws:cloudformation:us-east-2:983964660705:stack/amplify-answeranalyzer-dev-134850/db9fd840-25e0-11eb-95c8-0a2205549386",
+      "AmplifyAppId": "d166zl6xn0q0id"
+    }
+  }
+}
