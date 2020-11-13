@@ -33,19 +33,43 @@
     <div class="container">
         Answer Analyzer
         <div class="prompt1">
-            prompt1
+            First Name
         </div>
-        <input class="input1"><button class="submit1">submit</button>
-
+        <input class="input1">
         <div class="prompt2">
-            prompt2
+            Last Name
         </div>
-        <input class="input2"><button class="submit2">submit</button>
-
+        <input class="input2">
+<!--
         <div class="prompt3">
             prompt3
         </div>
         <input class="input3"><button class="submit3">submit</button>
+    -->
+        <button class="submit" onclick="callAPI(document.getElementsByClassName('input1').value, document.getElementsByClassName('input2').value)">API Call</button>
     </div>
 </body>
+<script>
+    // define the callAPI function that takes a first name and last name as parameters
+    var callAPI = (firstName,lastName)=>{
+        // instantiate a headers object
+        var myHeaders = new Headers();
+        // add content type header to object
+        myHeaders.append("Content-Type", "application/json");
+        // using built in JSON utility package turn object to string and store in a variable
+        var raw = JSON.stringify({"firstName":firstName,"lastName":lastName});
+        // create a JSON object with parameters for API call and store in a variable
+        var requestOptions = {
+            method: 'POST',
+            headers: myHeaders,
+            body: raw,
+            redirect: 'follow'
+        };
+        // make API call with parameters and use promises to get response
+        fetch("https://x6ewdtlo70.execute-api.us-east-2.amazonaws.com/dev", requestOptions)
+        .then(response => response.text())
+        .then(result => alert(JSON.parse(result).body))
+        .catch(error => console.log('error', error));
+    }
+</script>
 </html>
