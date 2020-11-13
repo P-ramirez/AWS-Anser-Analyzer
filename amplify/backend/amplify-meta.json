@@ -11,5 +11,77 @@
       "StackId": "arn:aws:cloudformation:us-east-2:983964660705:stack/amplify-answeranalyzer-dev-134850/db9fd840-25e0-11eb-95c8-0a2205549386",
       "AmplifyAppId": "d166zl6xn0q0id"
     }
+  },
+  "auth": {
+    "answeranalyzerbb95cded": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false,
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-answeranalyzer-dev-134850-deployment/amplify-cfn-templates/auth/answeranalyzerbb95cded-cloudformation-template.yml",
+        "logicalId": "authansweranalyzerbb95cded"
+      },
+      "lastPushTimeStamp": "2020-11-13T18:58:59.276Z",
+      "output": {
+        "AppClientSecret": "joors3knvs3rk9sd0nqco54mhaq52m1ponhvogk32rbotoqm00j",
+        "UserPoolId": "us-east-2_GJhCSX3Pd",
+        "AppClientIDWeb": "1s7cjs1jn6dcci7u5aovr2ibho",
+        "AppClientID": "2v0qn2vcfbgboise5c24958sgh",
+        "IdentityPoolId": "us-east-2:00e9998f-9fc3-4f96-b830-e28c3fa8aad6",
+        "IdentityPoolName": "answeranalyzerbb95cded_identitypool_bb95cded__dev",
+        "UserPoolName": "answeranalyzerbb95cded_userpool_bb95cded"
+      },
+      "lastPushDirHash": "LpuniAKj7xIbREFErw3CIQb31w0="
+    }
+  },
+  "function": {
+    "S3Trigger22ba8c9e": {
+      "service": "Lambda",
+      "providerPlugin": "awscloudformation",
+      "build": true,
+      "lastBuildTimeStamp": "2020-11-13T18:56:26.440Z",
+      "lastPackageTimeStamp": "2020-11-13T18:56:26.548Z",
+      "distZipFilename": "S3Trigger22ba8c9e-67477647645464393846-build.zip",
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-answeranalyzer-dev-134850-deployment/amplify-cfn-templates/function/S3Trigger22ba8c9e-cloudformation-template.json",
+        "logicalId": "functionS3Trigger22ba8c9e"
+      },
+      "lastPushTimeStamp": "2020-11-13T18:58:59.276Z",
+      "output": {
+        "Region": "us-east-2",
+        "Arn": "arn:aws:lambda:us-east-2:983964660705:function:S3Trigger22ba8c9e-dev",
+        "Name": "S3Trigger22ba8c9e-dev",
+        "LambdaExecutionRole": "S3Trigger22ba8c9eLambdaRole22ba8c9e-dev"
+      },
+      "lastPushDirHash": "K0Lt0SjwsoRSn6m+/fDqOC1EVSc="
+    }
+  },
+  "storage": {
+    "answeranalyzer": {
+      "service": "S3",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [
+        {
+          "category": "function",
+          "resourceName": "S3Trigger22ba8c9e",
+          "attributes": [
+            "Name",
+            "Arn",
+            "LambdaExecutionRole"
+          ]
+        }
+      ],
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-answeranalyzer-dev-134850-deployment/amplify-cfn-templates/storage/s3-cloudformation-template.json",
+        "logicalId": "storageansweranalyzer"
+      },
+      "lastPushTimeStamp": "2020-11-13T18:58:59.276Z",
+      "output": {
+        "BucketName": "promptbucket134850-dev",
+        "Region": "us-east-2"
+      },
+      "lastPushDirHash": "bZwjCZ9nqReyjCvC0i6GOx3hVAg="
+    }
   }
 }

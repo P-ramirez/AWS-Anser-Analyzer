@@ -10,6 +10,11 @@
       "StackName": "amplify-answeranalyzer-dev-134850",
       "StackId": "arn:aws:cloudformation:us-east-2:983964660705:stack/amplify-answeranalyzer-dev-134850/db9fd840-25e0-11eb-95c8-0a2205549386",
       "AmplifyAppId": "d166zl6xn0q0id"
+    },
+    "categories": {
+      "auth": {
+        "answeranalyzerbb95cded": {}
+      }
     }
   }
 }
